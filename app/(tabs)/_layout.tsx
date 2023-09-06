@@ -1,4 +1,5 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { MaterialCommunityIcons, Feather, Ionicons } from '@expo/vector-icons';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
 
@@ -14,19 +15,26 @@ function TabBarIcon(props: {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
+//import { MaterialCommunityIcons, Feather, Ionicons } from '@expo/vector-icons';
+//<MaterialCommunityIcons name="chart-line" size={24} color="#FB3A04" />
+//<Feather name="map-pin" size={24} color="black" />
+//<MaterialCommunityIcons name="format-list-checkbox" size={24} color="black" />
+//<Ionicons name="settings-outline" size={24} color="black" />
+//<TabBarIcon name="code" color={color} />
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#FB3A04' ?? '#D5D7DF',
+        tabBarShowLabel: false,
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="chart-line" size={24} color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -46,10 +54,24 @@ export default function TabLayout() {
       <Tabs.Screen
         name="two"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Feather name="map-pin" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="three"
+        options={{
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="format-list-checkbox" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="config"
+        options={{
+          headerShown : false,
+          tabBarIcon: ({ color }) => <Ionicons name="settings-outline" size={24} color={color} />,
         }}
       />
     </Tabs>
   );
 }
+
+

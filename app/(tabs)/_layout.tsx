@@ -27,6 +27,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: '#FB3A04' ?? '#D5D7DF',
         tabBarShowLabel: false,
+        headerShown: false,
       }}
     >
       <Tabs.Screen
@@ -64,7 +65,6 @@ export default function TabLayout() {
       <Tabs.Screen
         name="setting"
         options={{
-          headerShown: false,
           tabBarIcon: ({ color }) => <Ionicons name="settings-outline" size={24} color={color} />,
         }}
       />

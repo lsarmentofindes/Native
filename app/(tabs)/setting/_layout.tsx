@@ -34,16 +34,10 @@ export default function SettingLayout() {
       <Stack.Screen
         name="area"
         options={{
-          title: 'Áreas',
-          headerRight: () => (
-            <Button bgColor={'transparent'} onPress={() => setShowModal(true)}>
-              <MaterialIcons name="add-circle-outline" size={25} color="#F63904" style={{ marginRight: 15 }} />
-              <ConnectionCheckModal showModal={showModal} setShowModal={setShowModal} />
-            </Button>
-          ),
+          headerShown: false,
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="risks"
         options={{
           title: 'Riscos',
@@ -54,7 +48,7 @@ export default function SettingLayout() {
             </Button>
           ),
         }}
-      />
+      /> */}
       <Stack.Screen name="events" options={{ title: 'Evento' }} />
     </Stack>
   );

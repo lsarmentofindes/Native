@@ -48,7 +48,7 @@ export function View(props: ViewProps) {
 
 export function CancelBtn({ navigation }: any) {
   return (
-    <Center  shadow={'3'} top={303}>
+    <Center shadow={'3'} top={303}>
       <Button bg="#83848B" style={styles.button} onPress={() => navigation.goBack()}>
         <DefaultText style={styles.text}>Cancelar</DefaultText>
       </Button>
@@ -62,10 +62,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  title: {
+  titleScreen: {
     fontSize: 16,
     fontWeight: '600',
     top: 48,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#323236',
   },
   box: {
     width: '100%',
@@ -83,5 +88,15 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     color: '#FAFAFA',
+  },
+  textTitle: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: '#323236',
+  },
+  hStackForm: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 15,
   },
 });

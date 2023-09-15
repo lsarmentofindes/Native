@@ -8,7 +8,7 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <ProfileModal />
-      <Text style={styles.title}>Gráficos</Text>
+      <Text style={styles.title}></Text>
     </View>
   );
 }

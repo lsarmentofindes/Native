@@ -14,6 +14,12 @@ export type LevelsProps = {
 export type RisksProps = {
   id: number;
   name: string;
+  checklist: checklistRisksProps[];
+};
+
+export type checklistRisksProps = {
+  id: number;
+  item: string;
 };
 
 export type AreaCreateModalProps = {
@@ -25,6 +31,7 @@ export type AreaEditModalProps = {
   showEditModal: boolean;
   handleCloseEditModal: () => void;
 };
+
 export type AreaDeleteModalProps = {
   item: AreaProps;
   showDeleteModal: boolean;
@@ -60,4 +67,9 @@ export type RisksDeleteModalProps = {
   name: string;
   showDeleteModal: boolean;
   handleCloseDeleteModal: () => void;
+};
+export type ChecklistItemCreateModalProps = {
+  item: RisksProps;
+  showCreateListItemModal: boolean;
+  handleCloseCreateChecklistItemModal: () => void;
 };
